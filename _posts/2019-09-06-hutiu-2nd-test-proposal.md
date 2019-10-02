@@ -1,5 +1,5 @@
-<blockquote><p>Name of proposal:  Marks-The-Spot-2nd-test</p>
-<blockquote><p>Date of creation:  Friday, September 6, 2019</p>
+<blockquote><p>Name of proposal:  Marks-The-Spot-2nd-test
+Date of creation:  Friday, September 6, 2019</p>
 
 <blockquote><p>json object:</p>
 <blockquote><p>{</p>
@@ -15,5 +15,5 @@
 
 <hr />NOTES:<hr />
 
-<blockquote><p>Previous test was pointing to nonfunctional url.  Fixed [link](https://bit.ly/2k9e5zq)</p> 
+<blockquote><p>Previous test was pointing to nonfunctional url.</p>  Fixed [link](https://bit.ly/2k9e5zq) 
 </blockquote>
