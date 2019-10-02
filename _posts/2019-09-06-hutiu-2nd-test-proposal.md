@@ -5,7 +5,6 @@
 >json object:   
       
 {      
-
 >"end_epoch":  1570420800,    
 >"name":  "Marks-The-Spot-2ndtest",      
 >"payment_address":  "PBiQ7dFrQYVtYoQiGKrFZdhKWEKG1RGu44",       
@@ -15,7 +14,7 @@
 >"url":  "https://bit.ly/2k9e5zq"     
 >}    
            
-<hr />NOTES:<hr />    
+<hr />NOTES:<hr />
 
 >Previous test was pointing to nonfunctional url.  Fixed [link](https://bit.ly/2k9e5zq)    
 
