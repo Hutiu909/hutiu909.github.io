@@ -3,27 +3,45 @@ layout: post
 title: "hutiu first test proposal"
 date: 2019-08-30
 ---
+Name of proposal: box-logo   
+Date of creation: Friday, August 30, 2019  
 
+json object:   
+
+{   
+  "end_epoch": 1571131570,    
+  "name": "box-logo",     
+  "payment_address": "yd5KMREs3GLMe6mTJYr3YrH1juwNwrFCfB",    
+  "payment_amount": 500,        
+  "start_epoch": 1568556090,        
+  "type": 1,        
+  "url": "https://bit.ly/30M4LSb"       
+}      
+
+<hr />NOTES      
+<hr />      
+     
 With superblocks activated on AXE blockchain, I decided to see if I can submit a test proposal. There are currently no hosted proposal generator.  Below are the methods that I've used to create the test proposal manually.
 
 --The data-hex field is comprised of a JSON object as described in GObject Deserialize which is serialized to hex. 
 
-json object-
-{
-  "end_epoch": 1571131570,
-  "name": "box-logo",
-  "payment_address": "yd5KMREs3GLMe6mTJYr3YrH1juwNwrFCfB",
-  "payment_amount": 500,
-  "start_epoch": 1568556090,
-  "type": 1,
-  "url": "https://bit.ly/30M4LSb"
-}
+json object:           
+     
+{        
+  "end_epoch": 1571131570,         
+  "name": "box-logo",       
+  "payment_address": "yd5KMREs3GLMe6mTJYr3YrH1juwNwrFCfB",         
+  "payment_amount": 500,        
+  "start_epoch": 1568556090,         
+  "type": 1,        
+  "url": "https://bit.ly/30M4LSb"         
+}             
 
 I removed the spaces from the json object to serialized the object
 
 {"end_epoch":1571131570,"name":"box-logo","payment_address":"PBiQ7dFrQYVtYoQiGKrFZdhKWEKG1RGu44","payment_amount":500,"start_epoch":1568556090,"type":1,"url":"https://bit.ly/30M4LSb"}
 
-***Note - the url was arbitrary and did not resolve correctly to a page
+****the url was arbitrary and did not resolve correctly to a page
 
 I then used a strings to hex converter ( http://string-functions.com/string-hex.aspx ) to convert the serialized object to hex.
 The resulting encoded string:
