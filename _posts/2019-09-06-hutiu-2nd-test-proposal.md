@@ -1,8 +1,8 @@
 Name of proposal:  Marks-The-Spot-2nd-test   
 Date of creation:  Friday, September 6, 2019   
       
->json object:   
-{   
+json object:   
+{       
 >"end_epoch":  1570420800,    
 >"name":  "Marks-The-Spot-2ndtest",      
 >"payment_address":  "PBiQ7dFrQYVtYoQiGKrFZdhKWEKG1RGu44",       
