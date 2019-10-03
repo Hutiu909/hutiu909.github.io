@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "hutiu first test proposal"
+title: "Hutiu First Test Proposal"
 date: 2019-08-30
 ---
 Name of proposal: box-logo   
