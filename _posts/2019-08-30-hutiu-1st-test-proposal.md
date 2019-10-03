@@ -20,7 +20,7 @@ json object:
 
 <hr />NOTES      
 <hr />      
-     
+       
 With superblocks activated on AXE blockchain, I decided to see if I can submit a test proposal. There are currently no hosted proposal generator.  Below are the methods that I've used to create the test proposal manually.
 
 --The data-hex field is comprised of a JSON object as described in GObject Deserialize which is serialized to hex. 
