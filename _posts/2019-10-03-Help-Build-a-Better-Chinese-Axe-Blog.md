@@ -20,4 +20,4 @@ of Andrew Monkey's Blog, a blog site catered to the Chinese community.  (Despite
 translate option from Chrome) The proposal is request a budget of 20 AXE to help aid in building a better blog.     
 
 
-**Link to <a href="http://andehou.cryptopowered.club/?cat=2/"Andrew Monkey's Blog</a>**      
+**Link to [Andrew Monkey's Blog](http://andehou.cryptopowered.club/?cat=2/)**      
