@@ -16,6 +16,7 @@ json object:
 <hr />NOTES:   
 <hr />    
     
-Previous test was pointing to nonfunctional url.  Fixed [link](https://bit.ly/2k9e5zq)    
+Previous test was pointing to nonfunctional url.       
+Here's the fixed [link](https://bit.ly/2k9e5zq).    
 
 
