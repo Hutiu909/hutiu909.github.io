@@ -19,5 +19,5 @@ json object:
 After finishing with building the AXE Proposal Generator and hosting it, this third test was created with the new hosted tool.    
 Side note, the "payment amount" of 666 was my attempt at a tribute to the man.       
 
-*** Link to the <a href="proposal.axerunners.org">AXE Proposal Generator</a> ***         
+*** Link to the <a href="https://proposal.axerunners.org">AXE Proposal Generator</a> ***         
 
