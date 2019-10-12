@@ -9,17 +9,15 @@ title: How to Create & Submit a Proposal
 <li> A computer running a full-featured Axe Core wallet
 <li> 0.5 AXE for the proposal fee</li>  
 </pre>
-   
 <pre class="prettyprint">    
-<b>CREATING A PROPOSAL:</b>      
-</pre>     
-   
+<hr /><b>CREATE A PROPOSAL</b><hr />
+</pre>           
 <pre class="prettyprint">   
-*Use AXE Proposal Generator*        
+<b>*Use AXE Proposal Generator*</b>        
 </pre>      
 <a href="https://proposal.axerunners.org/" target="_blank">AXE Proposal Generator</a>
 <p> 
-<img src="https://hutiu909.github.io/images/step-1.png" width="800" height="450" alt="pro-gen">
+<img src="https://hutiu909.github.io/images/step-1.png" width="800" height="450" alt="Create-Proposal">
 </p>    
 <pre class="prettyprint">
 <b>Proposal Name:</b> You must enter a short, clear and unique name for the proposal. The name of the proposal cannot exceed 40 characters. You must use the dash "-" instead of a space,</br> otherwise it will report an error.</br> 
@@ -32,3 +30,43 @@ title: How to Create & Submit a Proposal
 Once you've entered the information and made sure it's correct, you can create a proposal by clicking the blue Create Proposal button in the lower right corner.
 Please note that the above information is fixed and cannot be modified after being submitted to the blockchain.
 </pre>
+<pre class="prettyprint">    
+<hr /><b>WALLET COMMANDS</b><hr />
+</pre>
+<pre class="prettyprint">After pressing on the blue Create Proposal button from the previous step, you should be looking at the Wallet Commands section in the AXE Proposal Generator. As seen in the image below.</pre>   
+<p>
+<img src="https://hutiu909.github.io/images/step-2.png" width="800" height="450" alt="Wallet-Commands">
+</p>
+<pre class="prettyprint">
+The Wallet Commands section consist of "Prepare Proposal Command"(OUTPUT) and "Transaction ID"(INPUT).  
+</pre>
+<p>
+<img src="https://hutiu909.github.io/images/core-1.png" width="800" height="450" alt="axe-core">
+</p>
+<pre class="prettyprint">
+You will need to copy the generated strings from the output of the "Prepare Proposal Command" and paste that into the AXE core console. This will result in an output in the AXE core console.</br>You then need to copy the resulting output and paste it into the "Transaction ID" section of the AXE Proposal Generator.
+</pre>
+<pre class="prettyprint">    
+<hr /><b>CONFIRM TRANSACTION</b><hr />
+</pre>
+<pre class="prettyprint">The AXE Proposal Generator should now resemble the image below.</pre>   
+<p>
+<img src="https://hutiu909.github.io/images/step-3.png" width="800" height="450" alt="Confirm-Transaction">
+</p>
+<pre class="prettyprint">
+There isn't anything to do in this section except wait. You are now waiting for 6 confirmations. The white bar will progressively fill and turn blue as your transaction is confirmed with each passing block.</br>Once the 6 confirmations requirement is met, you will be greeted with the final section of the AXE Proposal Generator.</pre>
+<pre class="prettyprint">    
+<hr /><b>SUBMIT PROPOSAL</b><hr />
+</pre>
+<pre class="prettyprint">You're almost there!  You are now only a few steps away from completion.</pre>
+<p>
+<img src="https://hutiu909.github.io/images/step-4.png" width="800" height="450" alt="Submit-Proposal">
+</p>    
+<pre class="prettyprint">
+Copy the generated output from the "Submit Proposal" box and paste it into the AXE core console. There will be an output in the AXE core console. This is your unique proposal id. Make a note of it</br>so you can check on it later.    
+</pre>
+<p>
+<img src="https://hutiu909.github.io/images/core-2.png" width="800" height="450" alt="axe-core">
+</p>
+<pre class="prettyprint"><b>Congrats!</b> You are done! Your proposal is now submitted.  You can check your proposal in the AXE core console with command: <b>gobject list</b> or <b>gobject get "your unique proposal id"</b>
+</pre> 
