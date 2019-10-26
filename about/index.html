@@ -1,40 +1,42 @@
+0
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+      <title><h2>SUBMITTED PROPOSALS</h2></title>
   </head>
   <body>
-    <table id="myTable">
-      <th>
-        <td>heading</td>
-        <td>heading</td>
-      </th>
-
-    </table>
+    <div id="prolist"></div>
 
   <script>
-var url  = "https://insight.axecore.net/insight-api/gobject/list/";
-var xhr  = new XMLHttpRequest()
-xhr.open('GET', url, true)
-xhr.onload = function () {
-    var users = JSON.parse(xhr.responseText);
-    if (xhr.readyState == 4 && xhr.status == "200") {
+        var url  = "https://insight.axecore.net/insight-api/gobject/list/?results=500";
+        var xhr  = new XMLHttpRequest()
+        xhr.open('GET', "https://insight.axecore.net/insight-api/gobject/list/?results=500", true)
+        xhr.onload = function () {
+            var proposal = JSON.parse(xhr.responseText);
+            if (xhr.readyState == 4 && xhr.status == "200") {
+             var table ="<table border='1'><tr><th>Name</th><th>Date-Created</th><th>Pay-Date</th></tr>";
+            var tr = "";
+            var tableend = "</table>";
+                var name,link,pay-address;
+                for (var i = 0; i < users.results.length; i++) {
+                   name = users.results[i]['name']['title']+' '+users.results[i]['name']['first'];
+                   email = users.results[i]['link'];
+                   phone = users.results[i]['pay-address'];
 
-    for (i = 0; i < users.length; i++) {
-            var table = document.getElementById("myTable");
-            var row = table.insertRow(0);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            cell1.innerHTML = users[i].value1;
-            cell2.innerHTML = users[i].value2;
-    }
-    } else {
-        console.error(users);
-    }
-}
-xhr.send(null);
+                   tr += "<tr><td>"+name+"</td><td>"+link+"</td><td>"+pay-adrress+"</td></tr>"; 
+
+                }
+              var finaltable =  table+tr+tableend; 
+                document.getElementById('prolist').innerHTML = finaltable;
+           /* console.log(users);
+            console.log(typeof users)
+                console.table(users);*/
+            } else {
+                console.error(users);
+            }
+        }
+        xhr.send(null);
     </script>
   </body>
-</html>
