@@ -13,18 +13,18 @@
         var xhr  = new XMLHttpRequest()
         xhr.open('GET', "https://insight.axecore.net/insight-api/gobject/list/", true)
         xhr.onload = function () {
-            var proposal = JSON.parse(xhr.responseText);
+            var DataObject = JSON.parse(xhr.responseText);
             if (xhr.readyState == 4 && xhr.status == "200") {
-             var table ="<table border='1'><tr><th>Name</th><th>Date-Created</th><th>Pay-Date</th></tr>";
+             var table ="<table border='1'><tr><th>Name</th><th>Pay-Amount</th><th>Info</th></tr>";
             var tr = "";
             var tableend = "</table>";
-                var hash,link,payment_amount;
-                for (var i = 0; i < proposal.results.length; i++) {
-                   hash = proposal.results[i]['Hash']['CreationTime']+' '+proposal.results[i]['Hash']['payment_amount'];
-                   link = proposal.results[i]['url'];
-                   payment_amount = proposal.results[i]['payment_amount'];
-
-                   tr += "<tr><td>"+hash+"</td><td>"+link+"</td><td>"+payment_amount+"</td></tr>"; 
+                var proposal,link,payment_amount;
+                for (var i = 0; i < DataObject.results.length; i++) {
+                   proposal = DataObject.results[i]['Hash']['name']+' '+DataObject.results[i]['Hash']['payment_amount'];
+                   payment_amount = DataObject.results[i]['payment_amount'];
+                   link = DataObject.results[i]['url'];
+                  
+                   tr += "<tr><td>"+proposal+"</td><td>"+payment_amount+"</td><td>"+link+"</td></tr>"; 
 
                 }
               var finaltable =  table+tr+tableend; 
