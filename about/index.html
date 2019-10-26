@@ -1,8 +1,4 @@
----
-layout: default
-title: Submitted Proposals       
----
-<h1>{{ page.title }}</h1>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -13,22 +9,22 @@ title: Submitted Proposals
     <div id="prolist"></div>
 
   <script>
-        var url  = "https://insight.axecore.net/insight-api/gobject/list/?results=500";
+        var url  = "https://insight.axecore.net/insight-api/gobject/list/";
         var xhr  = new XMLHttpRequest()
-        xhr.open('GET', "https://insight.axecore.net/insight-api/gobject/list/?results=500", true)
+        xhr.open('GET', "https://insight.axecore.net/insight-api/gobject/list/", true)
         xhr.onload = function () {
             var proposal = JSON.parse(xhr.responseText);
             if (xhr.readyState == 4 && xhr.status == "200") {
              var table ="<table border='1'><tr><th>Name</th><th>Date-Created</th><th>Pay-Date</th></tr>";
             var tr = "";
             var tableend = "</table>";
-                var name,link,pay-address;
-                for (var i = 0; i < users.results.length; i++) {
-                   name = users.results[i]['name']['title']+' '+users.results[i]['name']['first'];
-                   email = users.results[i]['link'];
-                   phone = users.results[i]['pay-address'];
+                var hash,link,payment_amount;
+                for (var i = 0; i < proposal.results.length; i++) {
+                   hash = proposal.results[i]['Hash']['CreationTime']+' '+proposal.results[i]['Hash']['payment_amount'];
+                   link = proposal.results[i]['url'];
+                   payment_amount = proposal.results[i]['payment_amount'];
 
-                   tr += "<tr><td>"+name+"</td><td>"+link+"</td><td>"+pay-adrress+"</td></tr>"; 
+                   tr += "<tr><td>"+hash+"</td><td>"+link+"</td><td>"+payment_amount+"</td></tr>"; 
 
                 }
               var finaltable =  table+tr+tableend; 
