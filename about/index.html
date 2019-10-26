@@ -1,3 +1,7 @@
+---
+layout: default
+title: Submitted Proposals       
+---
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +22,8 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: black">
+<font face="arial,helvetica" , size=6 , color=green>>
     <p><h1>VOTES COUNT</h1></p>
     <div id="showData"></div>
 <p>
@@ -161,7 +166,7 @@ SUBMITTED PROPOSALS
 		</body>
 
 </body>
-
+</font>
 <script>
     $(document).ready(function () {
         $.getJSON("https://insight.axecore.net/insight-api/gobject/list?.json", function (data) {
