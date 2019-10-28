@@ -11,7 +11,8 @@ title: Submitted Proposals
         table 
         {
             width: 100%;
-            font: 12px Calibri;
+            font: 14px Arial,Helvetica;
+            color: #008F11;
         }
         table, th, td 
         {
@@ -25,7 +26,8 @@ title: Submitted Proposals
         table1 
         {
             width: 100%;
-            font: 14px Calibri;
+            font: 14px Arial,Helvetica;
+            color: #008F11;
         }
         table1, th, td 
         {
@@ -37,25 +39,25 @@ title: Submitted Proposals
     
     </style>
 </head>
-<body style="background-color: white">
-<font face="arial,helvetica" , size=6 , color=green>>
-    <p>VOTES COUNT</p>
-    <div id="showData"></div>
-
-<p>
-SUBMITTED PROPOSALS
-</p>
+<body style="background-color: #0D0208"></body>
+<font face="arial,helvetica" , size=4 , color=#00FF41>
+    <p>PROPOSAL'S VOTE COUNT</p>
+</font>
+<div id="showData"></div>
+<body style="background-color: #0D0208">
+<font face="arial,helvetica" , size=4 , color=#00FF41>
+<p>PROPOSALS INFO</p>
+</font>
 <div id="showObjectData"></div>		
 
-</body>
-</font>
+
+
 <script>
     $(document).ready(function () {
         $.getJSON("https://insight.axecore.net/insight-api/gobject/list?.json", function (data) {
             var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
             $.each(data, function (index, value) {
                 arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
-                //arrItems.push(value.DataObject);
             });
             // EXTRACT VALUE FOR TABLE HEADER.
             var col = [];
