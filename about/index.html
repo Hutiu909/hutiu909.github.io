@@ -5,10 +5,12 @@ title: Submitted Proposals
 
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
+    <title>AXE PROPOSALS</title>
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+</head>    
     <style>
-        table 
+		table 
         {
             width: 100%;
             font: 14px Arial,Helvetica;
@@ -21,116 +23,47 @@ title: Submitted Proposals
             padding: 2px 3px;
             text-align: center;
         }
+   	</style>
+    <body>
+    	<font face="arial,helvetica" , size=4 , color=#00FF41>
+    		<p><center>CURRENT AXE PROPOSALS</center></p>
+		</font>
+        
+        <table id="records_table" border='1'>
+    	<tr>
+        <th>HASH</th>
+        <th>PROPOSAL NAME</th>
+        <th>PAYMENT AMOUNT</th>
+    	<th>PAYMENT ADDRESS</th>
+        <th>PAYMENT DATE</th>
+        <th>INFO URL</th>
+        <th>YES VOTES</th>
+        <th>NO VOTES</th>
+        
+        </tr>
+		</table>
     
-    	 
-        table1 
-        {
-            width: 100%;
-            font: 14px Arial,Helvetica;
-            color: #008F11;
-        }
-        table1, th, td 
-        {
-            border: solid 1px #DDD;
-            border-collapse: collapse;
-            padding: 2px 3px;
-            text-align: center;
-        }
+    <body style="background-color: #0D0208"></body>
+	</body>
     
-    </style>
-</head>
-<body style="background-color: #0D0208"></body>
-<font face="arial,helvetica" , size=4 , color=#00FF41>
-    <p>PROPOSAL'S VOTE COUNT</p>
-</font>
-<div id="showData"></div>
-<body style="background-color: #0D0208">
-<font face="arial,helvetica" , size=4 , color=#00FF41>
-<p>PROPOSALS INFO</p>
-</font>
-<div id="showObjectData"></div>		
+<script >
+	var jsonData = [];
 
-
-
-<script>
-    $(document).ready(function () {
-        $.getJSON("https://insight.axecore.net/insight-api/gobject/list?.json", function (data) {
-            var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
-            $.each(data, function (index, value) {
-                arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
-            });
-            // EXTRACT VALUE FOR TABLE HEADER.
-            var col = [];
-            for (var i = 0; i < arrItems.length; i++) {
-                for (var key in arrItems[i]) {
-                    if (col.indexOf(key) === -1) {
-                        col.push(key);
-                    }
-                }
-            }
-            // CREATE DYNAMIC TABLE.
-            var table = document.createElement("table");
-            // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
-            var tr = table.insertRow(-1);                   // TABLE ROW.
-            for (var i = 0; i < col.length; i++) {
-                var th = document.createElement("th");      // TABLE HEADER.
-                th.innerHTML = col[i];
-                tr.appendChild(th);
-            }
-            // ADD JSON DATA TO THE TABLE AS ROWS.
-            for (var i = 0; i < arrItems.length; i++) {
-                tr = table.insertRow(-1);
-                for (var j = 0; j < col.length; j++) {
-                    var tabCell = tr.insertCell(-1);
-                    tabCell.innerHTML = arrItems[i][col[j]];
-                }
-            }
-            // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-            var divContainer = document.getElementById("showData");
-            divContainer.innerHTML = "";
-            divContainer.appendChild(table);
+	$.ajax({
+    	url: 'https://insight.axecore.net/insight-api/gobject/list/',
+    	type: 'GET',
+    	data: {
+        	json: jsonData
+    	},
+    success: function (response) {
+      
+        
+        var trHTML = '';
+        $.each(response, function (i, item) {
+            trHTML += '<tr><td>' + item.Hash + '</td><td>' + item.DataObject.name + '</td><td>' + item.DataObject.payment_amount + '</td><td>' + item.DataObject.payment_address + '</td><td>' + item.DataObject.end_epoch + '</td><td>' + item.DataObject.url + '</td><td>' + item.AbsoluteYesCount + '</td><td>' + item.NoCount + '</td></tr>';
         });
-    });
-</script>
-<script>
- $(document).ready(function () {
-        $.getJSON("https://insight.axecore.net/insight-api/gobject/list?.json", function (data) {
-            var arrItems1 = [];      // THE ARRAY TO STORE JSON ITEMS.
-            $.each(data, function (index, value) {
-                //arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
-                arrItems1.push(value.DataObject);
-            });
-            // EXTRACT VALUE FOR TABLE HEADER.
-            var col = [];
-            for (var i = 0; i < arrItems1.length; i++) {
-                for (var key in arrItems1[i]) {
-                    if (col.indexOf(key) === -1) {
-                        col.push(key);
-                    }
-                }
-            }
-            // CREATE DYNAMIC TABLE.
-            var table1 = document.createElement("table");
-            // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
-            var tr = table1.insertRow(-1);                   // TABLE ROW.
-            for (var i = 0; i < col.length; i++) {
-                var th = document.createElement("th");      // TABLE HEADER.
-                th.innerHTML = col[i];
-                tr.appendChild(th);
-            }
-            // ADD JSON DATA TO THE TABLE AS ROWS.
-            for (var i = 0; i < arrItems1.length; i++) {
-                tr = table1.insertRow(-1);
-                for (var j = 0; j < col.length; j++) {
-                    var tabCell = tr.insertCell(-1);
-                    tabCell.innerHTML = arrItems1[i][col[j]];
-                }
-            }
-            // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-            var divContainer = document.getElementById("showObjectData");
-            divContainer.innerHTML = "";
-            divContainer.appendChild(table1);
-        });
-    });
+        $('#records_table').append(trHTML);
+    }
+});
 </script>
 </html>
